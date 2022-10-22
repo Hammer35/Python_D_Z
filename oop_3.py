@@ -1,117 +1,70 @@
+# import time
 #
-# class Account:
-#     rate_usd = 0.013
-#     rate_eur = 0.011
-#     suffix = 'RUB'
-#     suffix_usd = 'USD'
-#     suffix_eur = 'EUR'
+# from aiogram import Bot, types
+# from aiogram.dispatcher import Dispatcher
+# from aiogram.utils import executor
+# from config import TOKEN
+# import os
+# import requests
+# import fake_useragent
+# from bs4 import BeautifulSoup
+# from selenium import webdriver
+# from selenium.webdriver.chrome.service import Service
+# from selenium.webdriver.common.by import By
+# from webdriver_manager.chrome import ChromeDriverManager
+import time
+# driver = webdriver.Chrome(executable_path="geckodriver.exe")
+
+# driver = webdriver.Chrome(ChromeDriverManager().install())
+# driver.maximize_window()
 #
-#     def __init__(self, num, surname, percent, value=0):
-#         self.__num = num
-#         self.__surname = surname
-#         self.__percent = percent
-#         self.__value = value
+# s=Service("chromedriver.exe")
+# driver=webdriver.Chrome(service=s)
+# driver.get('https://www.google.com')
+# driver.find_element(By.NAME, 'q').send_keys('Yasser Khalil')
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+driver = webdriver.Firefox("geckodriver.exe")
+
+    # Navigate to url
+driver.get("http://www.google.com")
+
+    # Enter "webdriver" text and perform "ENTER" keyboard action
+driver.find_element(By.NAME, "q").send_keys("webdriver" + Keys.ENTER)
+
+
+
+time.sleep(5)
+
+driver.close()
+driver.quit()
+
+
+
+# driver = webdriver.Chrome(executable_path=r"D:\Учеба\piton\ucheba\D_Z_git\chromedriver.exe", options=options)
+
+
+
+
+
+
+
+
+
+# bot = Bot(TOKEN)
+# dp = Dispatcher(bot)
 #
-#
-#     def set_num(self, num):
-#         self.__num = num
-#
-#     def get_num(self):
-#         return self.__num
-#
-#     def set_surname(self, surname):
-#         self.__surname = surname
-#
-#     def get_surname(self):
-#         return self.__surname
-#
-#
-#     def set_percent(self, percent):
-#         self.__percent = percent
-#         self.__value += self.__value * self.__percent
-#         print('Проценты изменены => ', end='')
-#
-#
-#     def get_percent(self):
-#         return self.__percent
-#
-#     def set_value(self, value):
-#         self.__value = value
-#         print('Сумма изменена => ', end='')
-#
-#     def get_value(self):
-#         return self.__value
-#
-#
-#
-# acc = Account('12345', 'Долгих', 0.03, 1000)
-# acc.set_num('123')
-# print(f'#{acc.get_num()} => Изменен номер счета')
-# acc.set_surname('_Долгих_')
-# print(f'Владелец: {acc.get_surname()} => изменен')
-# acc.set_percent(0.04)
-# print(acc.get_percent())
-# acc.set_value(1101)
-# print(acc.get_value())
-#
-#
-#
-# class Account:
-#     rate_usd = 0.013
-#     rate_eur = 0.011
-#     suffix = 'RUB'
-#     suffix_usd = 'USD'
-#     suffix_eur = 'EUR'
-#
-#     def __init__(self, num, surname, percent, value=0):
-#         self.__num = num
-#         self.__surname = surname
-#         self.__percent = percent
-#         self.__value = value
+# @dp.message_handler()
+# async  def echo_send(message : types.Message):
+#     await message.answer(message.text)
+#     # await message.reply(message.text)
+#     # await bot.send_message(message.from_user.id, message.text)
 #
 #
-#     def set_num(self, num):
-#         self.__num = num
-#
-#     def get_num(self):
-#         return self.__num
-#
-#     def set_surname(self, surname):
-#         self.__surname = surname
-#
-#     def get_surname(self):
-#         return self.__surname
-#
-#
-#     def set_percent(self, percent):
-#         self.__percent = percent
-#         self.__value += self.__value * self.__percent
-#         print('Проценты изменены => ', end='')
-#
-#
-#     def get_percent(self):
-#         return self.__percent
-#
-#     def set_value(self, value):
-#         self.__value = value
-#         print('Сумма изменена => ', end='')
-#
-#     def get_value(self):
-#         return self.__value
-#
-#     nm = property(get_num, set_num)
-#     sm = property(get_surname, set_surname)
-#     prc = property(get_percent, set_percent)
-#     ve = property(get_value, set_value)
-#
-#
-# acc = Account('12345', 'Долгих', 0.03, 1000)
-# acc.nm = "112233"
-# print(f'#{acc.nm} => Изменен номер счета')
-# acc.sm = '__Долгих__'
-# print(f'Владелец: {acc.sm} => изменен')
-# acc.prc = 0.04
-# print(acc.prc)
-# acc.ve = 1101
-# print(acc.ve)
-#
+# executor.start_polling(dp, skip_updates=True)
+# https://vk-leaders.ru/
+# https://vk.com/
+# chromedriver.exe
+# Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.124 YaBrowser/22.9.3.886 Yowser/2.5 Safari/537.36
